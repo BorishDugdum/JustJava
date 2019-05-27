@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        displayPrice(0);
     }
 
     public void decCount(View view) {
@@ -85,31 +86,31 @@ public class MainActivity extends AppCompatActivity {
 
         //Name for order
         TextView name_text = findViewById(R.id.name_text);
-        String name = "Name:\t" + name_text.getText().toString();
+        String name = getString(R.string.name) + ":\t" + name_text.getText().toString();
 
         //Number ordered
         TextView number_text = findViewById(R.id.quantity_text_view);
-        String number = "Quantity:\t" + number_text.getText().toString();
+        String number = getString(R.string.quantity) + ":\t" + number_text.getText().toString();
 
         //Toppings
         CheckBox w_cream = findViewById(R.id.add_whipped_cream);
-        String toppings = (w_cream.isChecked()) ? "w/ Whipped Cream\n" : "";
+        String toppings = (w_cream.isChecked()) ? "w/ " + getString(R.string.toppings_whipped_cream) +"\n" : "";
         CheckBox choco = findViewById(R.id.add_chocolate);
-        toppings += ( (choco.isChecked()) ? "w/ Chocolate\n" : "" );
+        toppings += ( (choco.isChecked()) ? "w/ " + getString(R.string.toppings_chocolate) + "\n" : "" );
 
         //Amount spent
         TextView total_text = findViewById(R.id.order_summary_text_view);
-        String total = "Total:\t" + total_text.getText().toString();
+        String total = getString(R.string.total) + ":\t" + total_text.getText().toString();
 
         //Submit text
         TextView q = findViewById(R.id.order_submitted_text_view);
         String returnResult =
-                "Order Placed!\n\n" +
+                getString(R.string.order_placed) + "\n\n" +
                 name + "\n" +
                 number + "\n" +
                 toppings +
                 total + "\n\n" +
-                "Thank you!";
+                getString(R.string.thank_you);
         //q.setText(returnResult);
 
         //Toast.makeText(this, returnResult, Toast.LENGTH_LONG).show();
@@ -127,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
         scrollLayout.smoothScrollBy(0, delta);
         */
 
-        composeEmail(new String[] {}, "Order Summary", returnResult);
+        composeEmail(new String[] {}, getString(R.string.order_summary), returnResult);
     }
 
     public void composeEmail(String[] addresses, String subject, String text) {

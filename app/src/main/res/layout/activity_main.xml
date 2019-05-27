@@ -20,34 +20,26 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Name for order"
-                android:textAllCaps="true"
-                android:layout_marginBottom="8dp"/>
+                style="@style/HeaderTextStyle"
+                android:text="@string/name_for_order"/>
 
             <EditText
                 android:id="@+id/name_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="4dp"
                 android:textSize="16sp"
                 android:maxLines="1"
-                android:maxLength="10"
+                android:maxLength="20"
                 android:inputType="textPersonName"
-                android:hint="Enter Name For Order"/>
+                android:hint="@string/hint_for_name_entry"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Toppings"
-                android:textAllCaps="true"
-                android:layout_marginBottom="16dp"/>
+                style="@style/HeaderTextStyle"
+                android:text="@string/toppings"/>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp">
+                style="@style/CheckboxListStyle">
 
                 <android.support.v7.widget.AppCompatCheckBox
                     android:id="@+id/add_whipped_cream"
@@ -58,14 +50,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="24dp"
-                    android:text="Whipped Cream"
+                    android:text="@string/toppings_whipped_cream"
                     android:textSize="16sp"/>
 
             </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp">
+                style="@style/CheckboxListStyle">
 
                 <android.support.v7.widget.AppCompatCheckBox
                     android:id="@+id/add_chocolate"
@@ -76,25 +66,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="24dp"
-                    android:text="Chocolate"
+                    android:text="@string/toppings_chocolate"
                     android:textSize="16sp"/>
 
             </LinearLayout>
 
 
-
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Quantity"
-                android:textAllCaps="true" />
+                style="@style/HeaderTextStyle"
+                android:text="@string/quantity" />
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp">
+                android:layout_marginBottom="8dp">
 
                 <Button
                     android:layout_width="32dp"
@@ -125,28 +112,26 @@
 
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Order Summary"
-                android:textAllCaps="true" />
+                style="@style/HeaderTextStyle"
+                android:text="@string/order_summary" />
 
             <TextView
                 android:id="@+id/order_summary_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
                 android:textColor="@android:color/black"
                 android:textSize="16sp"
+                android:paddingLeft="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
-                android:text="$0.00" />
+                android:text="0" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:onClick="submitOrder"
-                android:text="Order" />
+                android:text="@string/order_button" />
 
             <TextView
                 android:id="@+id/order_submitted_text_view"
